@@ -25,7 +25,7 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
 //Routers init
-router(app);
+       router(app);
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
