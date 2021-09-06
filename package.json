@@ -6,12 +6,15 @@
     "start": "nodemon --inspect src/index.js",
     "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "lint-staged"
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
   "lint-staged": {
     "src/**/*.{js,json,scss}": "prettier --tab-width 4 --single-quote --trailing-comma all --write "
+  },
+  "hooks": {
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "express": "^4.17.1",
