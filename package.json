@@ -9,13 +9,22 @@
   },
   "author": "",
   "license": "ISC",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --tab-width 4 --single-quote --trailing-comma all --write "
+  },
+  "hooks": {
+    "pre-commit": "lint-staged"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3"
   },
   "devDependencies": {
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "morgan": "^1.10.0",
     "node-sass": "^6.0.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
   }
 }
