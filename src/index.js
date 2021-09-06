@@ -12,20 +12,20 @@ const port = 3000;
 app.use(morgan('combined'));
 
 //Static files
-      app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Template engine
-         app.engine(
+app.engine(
     '.hbs',
     handlebars({
         extname: '.hbs',
     }),
 );
-      app.set('view engine', '.hbs');
-     app.set('views', path.join(__dirname, 'resources/views'));
+app.set('view engine', '.hbs');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 //Routers init
-     router(app);
+router(app);
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
