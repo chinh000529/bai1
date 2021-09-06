@@ -12,10 +12,10 @@ const port = 3000;
 app.use(morgan('combined'));
 
 //Static files
-app.use(express.static(path.join(__dirname, 'public')));
+                      app.use(express.static(path.join(__dirname, 'public')));
 
 //Template engine
-app.engine(
+     app.engine(
     '.hbs',
     handlebars({
         extname: '.hbs',
