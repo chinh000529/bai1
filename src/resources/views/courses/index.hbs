@@ -1,0 +1,25 @@
+<div class="mt-4">
+    <a class="btn btn-primary" href="/courses/create">Create</a>
+    <form class="d-flex" method="GET">
+        <input class="form-control" type="text" name="q" value=""/>
+        <button class="btn btn-primary ms-3">Search</button>
+    </form>
+    <div class="row">
+        {{#each courses}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card card-course-item">
+                <a href="/courses/{{this.slug}}">
+                     <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                </a>
+                <div class="card-body">
+                    <a href="/courses/{{this.slug}}">
+                        <h5 class="card-title">{{this.name}}</h5>
+                    </a>
+                    <p class="card-text">{{this.description}}</p>
+                    <a href="#" class="btn btn-primary">Buy course</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
