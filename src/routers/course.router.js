@@ -12,4 +12,9 @@ router.post('/store', courseController.store);
 
 router.put('/:id', courseController.update);
 
+router.patch('/:id/restore', courseController.restore);
+
+router.delete('/:id/force', courseController.forceDelete);
+router.delete('/:id', courseController.delete);
+
 module.exports = router;
