@@ -21,7 +21,7 @@
         <td>{{this.name}}</td>
         <td>{{this.deletedAt}}</td>
         <td>
-          <a href="" type="button" class="btn btn-link" onclick=" return restoreCourse('{{this._id}}') ">Restore</a>
+          <a href="" type="button" class="btn btn-link" onclick="return restoreCourse('{{this._id}}')">Restore</a>
         </td>
         <td>
           <a href="" type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#delete-course" data-bs-id="{{this._id}}">Delete</a>
@@ -75,12 +75,10 @@
     deleteForm.submit();
   };
 
-
-  {{!-- const restoreCourse = async (iid) => {
-    const res = await fetch(`http://localhost:3000/courses/${iid}/restore?_method=PATCH`, {
-      method: 'POST'
-    })
+  const restoreCourse = async (iid) => {
+     await fetch(`/courses/${iid}/restore`, {
+      method: 'PATCH'
+    });
   };
-  const data = await res.json(); --}}
 
 </script>
